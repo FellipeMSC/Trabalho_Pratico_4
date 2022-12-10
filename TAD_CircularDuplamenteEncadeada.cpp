@@ -42,6 +42,8 @@ void circularDuplamenteEncadeada::insereItemAposElemento(Lista* lista, Item item
     if(atual == NULL) {
         cout << "Id inexistente!" << endl;
         return;
+    } else {
+        cout << "Parada inserida com sucesso" << endl;
     }
 
     Apontador inserido = new Elemento;
@@ -107,8 +109,13 @@ void circularDuplamenteEncadeada::imprimeItem(Item item) {
         return;
     }
 
-    cout << item.id;
-    cout << endl;
+    cout << "ID: " << item.id << endl;
+    cout << "Cidade: " << item.nomeCidade << endl;
+    cout << "Horario de Chegada: " << item.horarioChegada << endl;
+    cout << "Horario de Saida: " << item.horarioSaida << endl;
+    cout << "Preco da passagem: " << item.preco << endl;
+    cout << "-------------------------------";
+    cout << endl << endl;
 }
 
 void circularDuplamenteEncadeada::imprimeLista(Lista* lista) {

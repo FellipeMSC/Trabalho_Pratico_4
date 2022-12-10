@@ -1,36 +1,42 @@
 #include <iostream>
-#include "./TAD_CircularDuplamenteEncadeada.cpp"
+#include "./FuncoesMain.cpp"
 
 
 using namespace std;
-using namespace circularDuplamenteEncadeada;
 
 int main() {
-    Lista lista;
-    criaListaVazia(&lista);
-    Item item;
-    item.id = 2;
-    insereItemUltimo(&lista, item);
+    int idLinhas = 1;
+    int opcao;
 
-    item.id = 4;
-    insereItemUltimo(&lista, item);
-
-    item.id = 3;
-    insereItemAposElemento(&lista, item, 2);
-
-    item.id = 1;
-    insereItemPrimeiro(&lista, item);
-
-    retiraItemPorId(&lista, 4);
+    encadeada::Lista linhas;
+    encadeada::CriaListaVazia(&linhas);
+    preencheAutomatico(&linhas, &idLinhas);
     
-    cout << endl << "Normal" << endl;
-    imprimeLista(&lista);
+    string senhaAdm = "NosDeTotalPfv";
+    string senha;
+    
 
-    cout << endl << "Reverso" << endl;
-    imprimeListaReversa(&lista);
+    while(opcao != 3) {
+        cout << "1. Procurar Linha de Onibus" << endl;
+        cout << "2. Manutencao do Programa" << endl;
+        cout << "3. Sair" << endl;
+        cout << "Digite sua escolha: ";
+        cin >> opcao;
 
-    cout << endl << "Anterior do primeiro" << endl;
-    imprimeItem(lista.primeiro->ante->item);
+        if(opcao == 1) {
+            procuraLinhaOnibus(&linhas);
+        } else if(opcao == 2) {
+            cout << "Digite a senha de adminitrador: ";
+            cin >> senha;
+            if(senha == senhaAdm) {
+                manutencaoDoPrograma(&linhas, &idLinhas);
+            } else {
+                cout << "Senha incorreta" << endl;
+            }
+        }
+        system("pause");
+        system("cls");  
+    }
 
     return 0;
 }

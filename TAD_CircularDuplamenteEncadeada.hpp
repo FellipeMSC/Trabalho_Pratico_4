@@ -6,6 +6,10 @@ namespace circularDuplamenteEncadeada {
 
     struct Item {
         int id;
+        string nomeCidade;
+        string horarioChegada;
+        string horarioSaida;
+        float preco;
     };
 
     typedef struct Elemento* Apontador;
