@@ -55,9 +55,13 @@ void procuraLinhaOnibus(encadeada::Lista* linhas) {
     int opcao;
 
     while(opcao != 1 && opcao != 2 && opcao != 3) {
-        cout << "1. Procurar por cidade" << endl;
-        cout << "2. Procurar por codigo" << endl;
-        cout << "3. Sair" << endl;
+        cout << "|----------------------------------------|" << endl;
+        cout << "|   1. Procurar por cidade               |" << endl;
+        cout << "|----------------------------------------|" << endl;
+        cout << "|   2. Procurar por codigo               |" << endl;
+        cout << "|----------------------------------------|" << endl;
+        cout << "|   3. Sair                              |" << endl;
+        cout << "|----------------------------------------|" << endl;
         cin >> opcao;
     }
 
