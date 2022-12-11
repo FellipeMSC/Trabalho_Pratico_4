@@ -17,9 +17,15 @@ int main() {
     
 
     while(opcao != 3) {
-        cout << "1. Procurar Linha de Onibus" << endl;
-        cout << "2. Manutencao do Programa" << endl;
-        cout << "3. Sair" << endl;
+        cout << "|---------------------------------------------------|" << endl;
+        cout << "|     Sistema de Informacao de linhas de onibus     |" << endl;
+        cout << "|---------------------------------------------------|" << endl;
+        cout << "|     1. Procurar Linha de Onibus                   |" << endl;
+        cout << "|---------------------------------------------------|" << endl;
+        cout << "|     2. Manutencao do Programa                     |" << endl;
+        cout << "|---------------------------------------------------|" << endl;
+        cout << "|     3. Sair                                       |" << endl;
+        cout << "|---------------------------------------------------|" << endl;
         cout << "Digite sua escolha: ";
         cin >> opcao;
 
