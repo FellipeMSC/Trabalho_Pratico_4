@@ -164,6 +164,8 @@ void procuraLinhaOnibus(encadeada::Lista* linhas) {
 
 void imprimeMenuManutencao() {
     cout << "|------------------------------------|" << endl;
+    cout << "|         Menu De Manutencao         |" << endl;
+    cout << "|------------------------------------|" << endl;
     cout << "|   1. Incluir Nova Linha            |" << endl;
     cout << "|------------------------------------|" << endl;
     cout << "|   2. Incluir Nova Parada na Linha  |" << endl;
