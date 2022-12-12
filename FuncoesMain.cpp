@@ -2,6 +2,7 @@
 
 using namespace circularDuplamenteEncadeada;
 
+// Preenche algumas linhas automaticamente
 void preencheAutomatico(encadeada::Lista* linhas, int* id) {
     encadeada::Item linha;
     linha.id = *id;
@@ -50,6 +51,7 @@ void preencheAutomatico(encadeada::Lista* linhas, int* id) {
     encadeada::InsereListaUltimo(linhas, &linha);
 }
 
+// A opção 1 do menu principal, procura linhas de onibus por meio de um ID ou por meio das cidades de origem e destino
 void procuraLinhaOnibus(encadeada::Lista* linhas) {
     system("cls");  
     int opcao;
@@ -67,16 +69,18 @@ void procuraLinhaOnibus(encadeada::Lista* linhas) {
     }
 
     system("cls");
+    
+    // Encontrar linha de onibus por cidades
     if(opcao == 1) {
         int rotas = 0; // Usada como orientação de erro caso não encontre nenhuma linha.
 
-        float preco = 0;
+        float preco = 0; // Armazena o valor total da passagem
 
-        bool encontrouOrigem = false;
-        bool encontrouDestino = false;
+        bool encontrouOrigem = false; // Usada como orientação de erro, caso não encontre a origem nenhuma vez no sistema
+        bool encontrouDestino = false; // Usada como orientação de erro, caso não encontre o destino nenhuma vez no sistema
 
-        string origem;
-        string destino;
+        string origem; // Armazena a cidade de origem desejada
+        string destino; // Armazena a cidade de destino desejada
 
         encadeada::Apontador linha = linhas->primeiro->prox;
 
@@ -142,6 +146,7 @@ void procuraLinhaOnibus(encadeada::Lista* linhas) {
         return;
     }
 
+    // Encontrar linha de onibus por ID
     cout << "Digite o ID da linha desejada: ";
     cin >> opcao;
 
@@ -153,11 +158,13 @@ void procuraLinhaOnibus(encadeada::Lista* linhas) {
         return;
     }
 
+    // Imprime a linha inteira
     encadeada::ImprimeItemRecebido(aux->item);
     cout << endl << "---Cidades que a linha passa---" << endl << endl;
     imprimeLista(&aux->item.paradas);
 }
 
+// Imprime o menu da manutenção
 void imprimeMenuManutencao() {
     cout << "1. Incluir Nova Linha" << endl;
     cout << "2. Incluir Nova Parada na Linha" << endl;
@@ -168,6 +175,7 @@ void imprimeMenuManutencao() {
     cout << "7. Sair" << endl;
 }
 
+// Inclui uma nova linha no sistema
 void incluirNovaLinha(encadeada::Lista* linhas, int* id) {
     encadeada::Item novaLinha;
     novaLinha.id = *id;
@@ -187,6 +195,7 @@ void incluirNovaLinha(encadeada::Lista* linhas, int* id) {
     *id += 1;
 }
 
+// Inclui uma nova parada em uma linha especifica
 void incluirNovaParada(encadeada::Lista* linhas) {
     int id;
 
@@ -234,6 +243,7 @@ void incluirNovaParada(encadeada::Lista* linhas) {
     insereItemAposElemento(&linha->item.paradas, parada, id);
 }
     
+// Altera uma parada de uma linha especifica
 void alterarParada(encadeada::Lista* linhas) {
     int id;
 
@@ -274,6 +284,7 @@ void alterarParada(encadeada::Lista* linhas) {
     cout << endl << "Parada alterada com sucesso" << endl;
 }
 
+// Exclui uma parada da linha desejada
 void eliminarParada(encadeada::Lista* linhas) {
     int id;
 
@@ -304,6 +315,7 @@ void eliminarParada(encadeada::Lista* linhas) {
     cout << "Parada removida com sucesso" << endl;
 }
 
+// Exclui uma linha de onibus
 void eliminarLinha(encadeada::Lista* linhas) {
     int id;
 
@@ -320,6 +332,7 @@ void eliminarLinha(encadeada::Lista* linhas) {
     cout << endl << "Linha removida com sucesso" << endl;
 }
 
+// Menu de manutenção do programa, chama as funções necessarias para tal
 void manutencaoDoPrograma(encadeada::Lista* linhas, int* id) {
     system("cls");
     int opcao;
