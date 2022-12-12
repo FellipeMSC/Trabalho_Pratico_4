@@ -163,13 +163,21 @@ void procuraLinhaOnibus(encadeada::Lista* linhas) {
 }
 
 void imprimeMenuManutencao() {
-    cout << "1. Incluir Nova Linha" << endl;
-    cout << "2. Incluir Nova Parada na Linha" << endl;
-    cout << "3. Alterar uma Parada" << endl;
-    cout << "4. Eliminar uma Parada" << endl;
-    cout << "5. Eliminar uma linha" << endl;
-    cout << "6. Imprimir todas as linhas" << endl;
-    cout << "7. Sair" << endl;
+    cout << "|------------------------------------|" << endl;
+    cout << "|   1. Incluir Nova Linha            |" << endl;
+    cout << "|------------------------------------|" << endl;
+    cout << "|   2. Incluir Nova Parada na Linha  |" << endl;
+    cout << "|------------------------------------|" << endl;
+    cout << "|   3. Alterar uma Parada            |" << endl;
+    cout << "|------------------------------------|" << endl;
+    cout << "|   4. Eliminar uma Parada           |" << endl;
+    cout << "|------------------------------------|" << endl;
+    cout << "|   5. Eliminar uma linha            |" << endl;
+    cout << "|------------------------------------|" << endl;
+    cout << "|   6. Imprimir todas as linhas      |" << endl;
+    cout << "|------------------------------------|" << endl;
+    cout << "|   7. Sair                          |" << endl;
+    cout << "|------------------------------------|" << endl;
 }
 
 void incluirNovaLinha(encadeada::Lista* linhas, int* id) {
